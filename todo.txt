@@ -1,0 +1,16 @@
+how this rpgoram will work
+
+There will be scripts to communicate with devices.  
+A master program will be able to acces all these scripts
+
+This master program will do the following.
+
+-Keep a database of devices on the network and they're surrent state
+	(devices can ping the server when booting up and tell them there state.  good incase power goes out)
+-Keep databases of information recived from devices (when necessary)
+	-A temp sensor can feed data to it
+-Have access to port on the computer.  This port will face the world so users can control their home automation network from anywhere
+	ithis needs to be secure.  some kind of kay system would be sweet
+-add new devices automatically
+	-device goes on the network and pings the server (IP address would have to be added manually for this).  Else you can go o nthe server and add the device manually
+-

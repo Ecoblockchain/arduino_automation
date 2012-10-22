@@ -1,0 +1,1 @@
+<html><head></head><body>You are jacked into Willy<br/><br/><form action="changeit.php"  method='post'>		LED On/Off 	<select name="status">		<option value="on">on</option>		<option value="off">off</option>	</select>	<br />	<input type="submit" /></form></body></html>
