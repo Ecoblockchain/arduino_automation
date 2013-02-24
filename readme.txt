@@ -2,8 +2,21 @@ This is the code for a automation project I made last winter.  I hooked up an Ar
 
 I had the Arduino plugged into a space heater in my room.  This way I could keep the temperature of my apartment low.  When I was comming back to my apartment I would turn the space heater on 20 minutes before I got there and my room would be warm and toasty.
 
-The Arduinp code works with the Arduino software released before version 1.  Version one changed a few things and I'm currently editting the code to make it work.
 
-The working code is in the working folder, and the the broken code is in the not working folder.
+STEPS TO MAKE THIS WORK
+-Edit the Arduino code.  You should change the "ip address", "port", and "gateway" variables to fit your network.
 
-The php scripts send a packet to the arduino that tell it to turn the relay on or off.  
+-Edit "changeit.php" to reflect the values you changed in the arduino code
+
+-Throw the php scripts onto a webserver.
+
+-Now you can turn something on and off remotely.
+
+
+HOW THIS WORKS
+This project is pretty simple.  The arduino waits until a server connects to it.  Once the server connects the arduino will listen for any incoming packets.  When a packet is sent, the arduino will set a variable (the variable is "c" in the code) equal to text in the packet.
+
+Once the server is finished sending the packet, the arduino will execute a chunk of code based off the information in the packet. 
+
+
+Works with latest version of arduino compiler (1.0.3)

@@ -1,29 +1,14 @@
-#include <Dhcp.h>
-#include <Dns.h>
-#include <Ethernet.h>
-#include <EthernetClient.h>
-#include <EthernetServer.h>
-#include <EthernetUdp.h>
-#include <util.h>
-
-
-
-
-
 #include <SPI.h>
+#include <Ethernet.h>
 
-//#include <Client.h>
-//#include <Ethernet.h>
-//#include <Server.h>
-//#include <Udp.h>
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };  
-byte ip[] = { 192, 168, 1, 12 };
+byte ip[] = { 192, 168, 1, 166 };
 byte gateway[] = { 196,168, 1, 1 };
 byte subnet[] = {255, 255, 255, 0};
 
 
-EthernetServer server = EthernetServer(23);
+EthernetServer server(23);
 
 void setup() 
 {   
@@ -52,6 +37,8 @@ if (client) {
       if (client.available()) {
         char c = client.read();
         Serial.print(c);
+        
+        //Execute code based on the package the server sent
         if (c == '1')
         {
           Serial.println("ONN");
