@@ -41,19 +41,28 @@ if (client) {
         //Execute code based on the package the server sent
         if (c == '1')
         {
-          Serial.println("ONN");
+         Serial.println("ONN");
          digitalWrite(7, HIGH);
         }
         if (c == '0')
         {
-          Serial.println("OFF");
+         Serial.println("OFF");
          digitalWrite(7, LOW);
+        }
+        if (c == '9')//Check the state of Pin 7 and send that to the connected clent
+        {
+         Serial.println("CHECKSTATUS");
+         if (digitalRead(7)== LOW)
+           {server.write("OFF");}
+         if (digitalRead(7)== HIGH)
+           {server.write("ON");}
         }
       }
     }
     
     // give the web browser time to receive the data
     delay(1);
+    
     // close the connection:
     client.stop();
     Serial.println("jacked out");

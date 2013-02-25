@@ -20,3 +20,10 @@ Once the server is finished sending the packet, the arduino will execute a chunk
 
 
 Works with latest version of arduino compiler (1.0.3)
+
+
+
+
+
+WARNING!!!!!!
+Don't run this without settng up some security meausures beforehand.  A simple login script and SSL is what I used.  You don't want people turning your stuff on or off without you knowing.
